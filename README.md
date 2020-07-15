@@ -1,30 +1,33 @@
-# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework
+## spring源码导入教程
 
-This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). Collectively the Spring Framework and the family of Spring projects is often referred to simply as "Spring". 
+### 下载配置gradel：[版本统一5.6.3]
 
-Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
+​	https://blog.csdn.net/moxiaoya1314/article/details/79952937
 
-## Code of Conduct
+### 导入spring源码
 
-This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc). By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+​	http://www.mamicode.com/info-detail-2265989.html
 
-## Access to Binaries
+![image-20200715103632786](.\src\docs\asciidoc\readmeimages\image-20200715103632786.png)
 
-For access to artifacts or a distribution zip, see the [Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts) wiki page.
+### 编译⼯程（顺序：core-oxm-context-beans-aspects-aop）
 
-## Documentation
+​	⼯程—>tasks—>compileTestJava
 
-The Spring Framework maintains reference documentation ([published](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
-[API reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
+ 
 
-## Build from Source
+### 新建spring-model【在项目上右击新建model】
 
-See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wikipedia page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+之后将给的spring-lagou的代码、xml、build.gradle 内容复制到新建的model spring-lagou工程，测试运行
 
-## Stay in Touch
+![image-20200715103811868](E:\lagou\workspace\spring\Spring源码\spring-framework-5.1.x\src\docs\asciidoc\readmeimages\image-20200715103811868.png)
 
-Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](https://spring.io/blog/), and releases are announced via our [news feed](https://spring.io/blog/category/news).
+![image-20200715103822405](E:\lagou\workspace\spring\Spring源码\spring-framework-5.1.x\src\docs\asciidoc\readmeimages\image-20200715103822405.png)
 
-## License
+![image-20200715103835850](E:\lagou\workspace\spring\Spring源码\spring-framework-5.1.x\src\docs\asciidoc\readmeimages\image-20200715103835850.png)
 
-The Spring Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
+### 运行可能出现的错误：
+
+https://zhuanlan.zhihu.com/p/86606269?from_voters_page=true
+
+![image-20200715103903643](E:\lagou\workspace\spring\Spring源码\spring-framework-5.1.x\src\docs\asciidoc\readmeimages\image-20200715103903643.png)
