@@ -196,6 +196,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
 	@Override
 	public Object getBean(String name) throws BeansException {
+		// 5
 		return doGetBean(name, null, null, false);
 	}
 
@@ -313,10 +314,16 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					}
 				}
 
-				// Create bean instance.
+				/**
+				 *
+				 * Create bean instance.
+				 * 创建bean实例
+				 */
 				if (mbd.isSingleton()) {
+					// 5  ，6在getSingleton（）里面
 					sharedInstance = getSingleton(beanName, () -> {
 						try {
+							// 7
 							return createBean(beanName, mbd, args);
 						}
 						catch (BeansException ex) {
@@ -330,7 +337,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					bean = getObjectForBeanInstance(sharedInstance, name, beanName, mbd);
 				}
 
-				else if (mbd.isPrototype()) {
+				else if (mbd.isPrototype()) { // Prototype类型的bean的创建
 					// It's a prototype -> create a new instance.
 					Object prototypeInstance = null;
 					try {
@@ -343,7 +350,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					bean = getObjectForBeanInstance(prototypeInstance, name, beanName, mbd);
 				}
 
-				else {
+				else { // 其他scope类型的Bean的创建
 					String scopeName = mbd.getScope();
 					final Scope scope = this.scopes.get(scopeName);
 					if (scope == null) {
